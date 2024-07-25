@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHS APPLY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../ico.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="animated-bg"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Apply For GHS</h1>
+            <p class="subtitle">加入我们，成为改变未来的一份子！</p>
+        </div>
+        <div class="content">
+            <div class="left-column">
+                <form class="application-form" id="application-form">
+                    <div class="form-section">
+                        <h3>必填信息</h3>
+                        <div class="form-group">
+                            <label for="name" class="required">昵称（决定我们该如何称呼您？）</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="required">电子邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="qq" class="required">QQ号码（加入GHS请确保您有QQ号码）</label>
+                            <input type="qq" id="qq" name="qq" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required">你是？（可多选）</label>
+                            <div class="position-buttons">
+                                <button type="button" class="position-button"
+                                    data-position="developer">💻富有热情的开发者</button>
+                                <button type="button" class="position-button"
+                                    data-position="game-player">🎮充满活力的游戏玩家</button>
+                                <button type="button" class="position-button" data-position="artist">🎨才华横溢的设计者</button>
+                                <button type="button" class="position-button"
+                                    data-position="bloger">📊坚持不懈的个人博主</button>
+                            </div>
+                            <input type="hidden" id="position" name="position" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>选填信息</h3>
+                        <div class="form-group">
+                            <label for="age">年龄 <span class="optional">（选填，如果不愿透露可以不填，请不要给予我们虚假信息）</span></label>
+                            <input type="age" id="age" name="age">
+                        </div>
+                        <div class="form-group">
+                            <label for="skills">技能与专长 <span class="optional">（选填）</span></label>
+                            <textarea id="skills" name="skills"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="motivation">为什么想加入GHS？ <span class="optional">（选填）</span></label>
+                            <textarea id="motivation" name="motivation"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio">作品集链接 <span class="optional">（选填）</span></label>
+                            <input type="url" id="portfolio" name="portfolio">
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submit-btn">提交申请</button>
+                </form>
+            </div>
+            <div class="right-column">
+                <h2 style="color: var(--primary-color);">我们的优势</h2>
+                <ul class="feature-list">
+                    <li>前沿技术探索</li>
+                    <li>激发创意灵感 </li>
+                    <li>团结合作共赢</li>
+                    <li>持续学习无限进步</li>
+                    <li>全球化视野</li>
+                    <li>开放包容的团队文化</li>
+                </ul>
+                <div style="margin-top: 2rem;">
+                    <h3 style="color: var(--secondary-color);">加入我们，共创未来！</h3>
+                    <p>GHS致力于技术探索，合作共赢。我们期待你的加入，一同无限进步！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="success-overlay" id="success-overlay">
+        <div class="success-message">
+            <div class="success-icon">✅</div>
+            <h2>申请提交成功！</h2>
+            <p>感谢您申请加入GHS团队。我们已经收到您的申请，并将尽快审核。</p>
+            <p>如果您的符合我们的要求，我们的将会在5个工作日内与您联系。</p>
+            <p>再次感谢您对GHS的关注与支持！</p>
+            <button class="close-btn" id="close-success">关闭</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">GHS</div>
+            <nav class="footer-links">
+                <a href="https://www.ghs.red" class="footer-link">关于我们</a>
+                <a href="https://open.ghs.red" class="footer-link">OpenGHS</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Garbage Human Studio. 保留所有权利。
+        </div>
+    </footer>
+</body>
+
+</html>
