@@ -1,3 +1,38 @@
+// 以下内容用于关闭申请渠道，若以后需要开启，请删除或注释掉以下代码
+// 在文件开头的 window.addEventListener('load', ...) 函数中
+window.addEventListener('load', function() {
+    // 禁用所有输入框
+    inputs.forEach(input => {
+        input.disabled = true;
+    });
+    
+    // 禁用所有位置选择按钮
+    positionButtons.forEach(button => {
+        button.disabled = true;
+        button.style.pointerEvents = 'none';
+        button.style.opacity = '0.5';
+    });
+    
+    // 禁用提交按钮并更改文本
+    submitBtn.disabled = true;
+    submitBtn.textContent = '申请暂时关闭';
+    
+    // 移除所有事件监听器
+    form.removeEventListener('submit', submitHandler);
+    
+    // 清除定时器，防止updateSubmitButtonState函数执行
+    if(window.submitButtonTimer) {
+        clearTimeout(window.submitButtonTimer);
+    }
+    
+    // 覆盖updateSubmitButtonState函数
+    window.updateSubmitButtonState = function() {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '申请暂时关闭';
+    };
+});
+
+
 (function() {
     emailjs.init("TSF6e95DHy7VEE-SC"); // 请替换为你的EmailJS用户ID
 })();
@@ -142,8 +177,8 @@ function updateSubmitButtonState() {
         submitBtn.textContent = `请等待 ${remainingTime} 秒`;
         setTimeout(updateSubmitButtonState, 1000);
     } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = '提交申请';
+        submitBtn.disabled = true; // 禁用提交按钮，以后可开启
+        submitBtn.textContent = '申请暂时关闭';
     }
 }
 
